@@ -1,0 +1,8 @@
+services:
+  ledapp:
+    container_name: ledapp
+    environment:
+      - LED_SLEEP_TIME=0.2
+    image: prashanthjbabu/ledblinkdemoapp
+    privileged: true
+version: '2.0'

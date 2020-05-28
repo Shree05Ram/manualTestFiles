@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nginx: 
+    image: nginx:latest
+    container_name: production_nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+
+  ismydependencysafe:
+    image: ismydependencysafe:latest
+    container_name: production_ismydependencysafe
+    expose:
+      - "80"

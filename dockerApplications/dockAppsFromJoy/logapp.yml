@@ -1,0 +1,8 @@
+services:
+  dockerlog1:
+    container_name: dockerlog1
+    image: prashanthjbabu/dockerlogtest
+  dockerlog2:
+    container_name: dockerlog2
+    image: prashanthjbabu/dockerlogtest
+version: '2.0'
