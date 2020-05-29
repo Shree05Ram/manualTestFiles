@@ -1,0 +1,9 @@
+{
+  "severity": 2,
+  "message":"Event Trigger test using cloud api",
+  "data": {
+        "tag1": 123,
+       "tag2": "Test tag"
+  },
+  "notify": true
+}
