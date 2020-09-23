@@ -38,15 +38,15 @@ cat << EOF > pdata.json
 {
 	"search_key": "",
 	"sort": {
-		"column_name": "name",
-		"order": "asc"
-	},
-	"tags": [],
-	"profileid": "$ProfileID",
-	"devicelist": []
+        "column_name": "createdAt",
+        "order": "desc"
+    	},
+    	"tags": [],
+    	"profileid": ["$ProfileID"],
+    	"devicelist": []
 }
 EOF
-DGPdevicesCurlArgs="https://$PartnerURL/dm/api/_external/dm/v1/device/search?limit=1000&offset=0&profileType=0"
+DGPdevicesCurlArgs=" https://$PartnerURL/dm/api/dm/v1/device/search?limit=10&offset=0&profileType=0"
 resp=`curl -s -k --cookie $cookieArg -d @pdata.json $DGPdevicesCurlArgs`
 #echo $resp
 echo $resp | jq '.devices | .[] | .id' | cut -d \" -f 2 > DeviceIds.txt
@@ -54,7 +54,7 @@ echo $resp | jq '.devices | .[] | .id' | cut -d \" -f 2 > DeviceIds.txt
 FILE="DeviceIds.txt"				#Enter the correct path of the DeviceIds.txt file 
 for id in `cat $FILE`;
 do
-	DeleteCurlArgs="https://$PartnerURL/dm/api/_external/dm/v1/device/$id"
+	DeleteCurlArgs="https://$PartnerURL/dm/api/dm/v1/device/$id"
 	echo $DeleteCurlArgs
 	echo device with $id will be deleted
 	resp=`curl -s -k --cookie $cookieArg -X "DELETE" $DeleteCurlArgs`
