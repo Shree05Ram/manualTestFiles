@@ -1,5 +1,8 @@
 user="$(id -un 2>/dev/null || true)"
 
+INSTALL_DIR=$1
+CONFIG_DIR=$2
+
 if [ "$user" != 'root' ]; then
         echo "Should be root user to run the script"
         exit 1
