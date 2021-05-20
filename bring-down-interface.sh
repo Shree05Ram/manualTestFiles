@@ -8,4 +8,4 @@ ip link set wlan0 up
 
 ##/system/bin/ifconfig usb0 down
 ##sleep 30s
-##/system/bin/ifconfig usbo up
+##/system/bin/ifconfig usb0 up
