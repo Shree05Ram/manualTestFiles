@@ -13,6 +13,6 @@ void main ()
                 sprintf(buff, "%s %d",base,i);          //Generate cmd with required inputs                                                         
                 system(buff);                           //Execute cmd
 
-                printf("%d \n",i);	
+                //printf("%d \n",i);
 	}
 }
